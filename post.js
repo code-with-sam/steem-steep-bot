@@ -1,7 +1,8 @@
 const steem = require('steem');
+const config = require('config');
 
-const ACCOUNT_NAME = ''
-const ACCOUNT_WIF = ''
+const ACCOUNT_NAME = config.username
+const ACCOUNT_WIF = config.postingKey
 
 
 /*
