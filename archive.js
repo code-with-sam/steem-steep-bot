@@ -1,6 +1,7 @@
 let schedule = [
   {
-    date : '2018/01/08',
+    date : '07/01/2018',
+    dateFormat : 'DD/MM/YYYY',
     title : 'Incredible View From the Grand Canyon',
     imgLink : 'http://linktoimage.org/04387650431',
     description : 'body text',
