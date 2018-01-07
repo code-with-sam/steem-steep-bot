@@ -5,32 +5,19 @@ const util = require('./util')
 const ACCOUNT_NAME = config.username
 const ACCOUNT_WIF = config.postingKey
 
-
-/*
-postingData -- example
-{
-  uniqueUrlString: '',
-  commentTitle: '';,
-  beneficiaries: [];,
-  body: `post body here`,
-  postBody: '';,
-  tags: [],
-  imageSize: { height:560, width:560}
-}
-*/
-
 module.exports.post = function(postingData){
-    steem.api.setOptions({ url: 'wss://steemd.privex.io' });
+    steem.api.setOptions({ url: 'wss://rpc.buildteam.io' });
 
     postingData.uniqueUrlString = util.randomString() + '-post'
+    postingData.postBody =`${postingData.imageLink} ${postingData.postBody}`
     postingData.app = 'steepshot/0.0.12-b'
-    postingData.primaryTag = postingData.tags[0] || 'photography',
-    postingData.otherTags = postingData.tags.slice(1),
+    postingData.primaryTag = postingData.tags[0] || 'photography'
+    postingData.otherTags = postingData.tags.slice(1)
+    postingData.beneficiaries = []
     postingData.beneficiaries.push({
       account: 'steepshot',
       weight: 100*10
     });
-
     let operations = [
       ['comment',
       {
@@ -41,9 +28,10 @@ module.exports.post = function(postingData){
         title: postingData.commentTitle,
         body: postingData.postBody,
         json_metadata : JSON.stringify({
-          tags: postingData.allTags,
+          tags: postingData.otherTags,
           image_size: postingData.imageSize,
-          app: postingData.app
+          app: postingData.app,
+          ipfs_photo: ""
         })
       }
     ],

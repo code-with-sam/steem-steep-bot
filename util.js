@@ -1,8 +1,8 @@
 const moment = require('moment');
 
-module.exports.isToday = function(data, format){
+module.exports.isToday = function(date, format){
   var today = moment();
-  let postDate = moment(item.date, item.dateFormat);
+  let postDate = moment(date, format);
   isToday = today.isSame(postDate, 'd')
   return isToday
 }
