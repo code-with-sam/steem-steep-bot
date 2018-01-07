@@ -18,9 +18,12 @@ postingData -- example
 */
 
 module.exports.post = function(postingData){
+    steem.api.setOptions({ url: 'wss://steemd.privex.io' });
+
+
     postingData.app = 'steepshot/0.0.12-b'
-    postingData.primaryTag: tags[0] || 'photography',
-    postingData.otherTags: tags.slice(1),
+    postingData.primaryTag = postingData.tags[0] || 'photography',
+    postingData.otherTags = postingData.tags.slice(1),
     postingData.beneficiaries.push({
       account: 'steepshot',
       weight: 100*10

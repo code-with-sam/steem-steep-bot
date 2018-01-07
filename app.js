@@ -6,6 +6,6 @@ steepshot.post({
   beneficiaries: [],
   body: `post body here`,
   postBody: '',
-  tags: ['photography', 'life']
+  tags: ['photography', 'life'],
   imageSize: { height:560, width:560}
 })
