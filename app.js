@@ -2,9 +2,11 @@ const steepshot = require('./post');
 const schedule = require('node-schedule');
 const archive = require('./archive');
 const util = require('./util')
+const config = require('./config');
 
 // 10am everyday
-let timer = schedule.scheduleJob('* 10 * * *', function(){
+let scheduledTime = `${postingMinute} {config.postingHour} * * *`
+let timer = schedule.scheduleJob(scheduledTime, function(){
 
     for (var i = 0; i < archive.length; i++) {
       let item = archive[i]
