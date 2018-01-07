@@ -13,14 +13,14 @@ postingData -- example
   body: `post body here`,
   postBody: '';,
   tags: [],
-  primaryTag: tags[0] || 'photography',
-  otherTags: tags.slice(1),
   imageSize: { height:560, width:560}
 }
 */
 
-module.exports = function(postingData){
+module.exports.post = function(postingData){
     postingData.app = 'steepshot/0.0.12-b'
+    postingData.primaryTag: tags[0] || 'photography',
+    postingData.otherTags: tags.slice(1),
     postingData.beneficiaries.push({
       account: 'steepshot',
       weight: 100*10

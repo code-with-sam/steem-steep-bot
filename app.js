@@ -1,13 +1,11 @@
-const postToSteepShot = require('./post');
+const steepshot = require('./post');
 
-postToSteepShot({
+steepshot.post({
   uniqueUrlString: '',
-  commentTitle: '';,
-  beneficiaries: [];,
+  commentTitle: '',
+  beneficiaries: [],
   body: `post body here`,
-  postBody: '';,
-  tags: [],
-  primaryTag: tags[0] || 'photography',
-  otherTags: tags.slice(1),
+  postBody: '',
+  tags: ['photography', 'life']
   imageSize: { height:560, width:560}
 })
