@@ -1,5 +1,6 @@
 const steem = require('steem');
-const config = require('config');
+const config = require('./config');
+const util = require('./util')
 
 const ACCOUNT_NAME = config.username
 const ACCOUNT_WIF = config.postingKey
@@ -21,7 +22,7 @@ postingData -- example
 module.exports.post = function(postingData){
     steem.api.setOptions({ url: 'wss://steemd.privex.io' });
 
-
+    postingData.uniqueUrlString = util.randomString() + '-post'
     postingData.app = 'steepshot/0.0.12-b'
     postingData.primaryTag = postingData.tags[0] || 'photography',
     postingData.otherTags = postingData.tags.slice(1),
@@ -29,6 +30,7 @@ module.exports.post = function(postingData){
       account: 'steepshot',
       weight: 100*10
     });
+
     let operations = [
       ['comment',
       {
