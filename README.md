@@ -56,3 +56,5 @@ let schedule = [
 ]
 
 ```
+
+*note - out of respect for steepshot and their services this scheduler includes the original 10% beneficiary to @steepshot. Please leave this in if you use this tool.*
