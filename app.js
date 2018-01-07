@@ -1,5 +1,6 @@
 const steepshot = require('./post');
 const schedule = require('node-schedule');
+const archive = require('./archive');
 
 // 10am everyday
 let timer = schedule.scheduleJob('* 10 * * *', function(){
