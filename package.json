@@ -1,0 +1,22 @@
+{
+  "name": "steeper-schedule-tool",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://code-with-sam@github.com/code-with-sam/steeper-schedule-tool.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/code-with-sam/steeper-schedule-tool/issues"
+  },
+  "homepage": "https://github.com/code-with-sam/steeper-schedule-tool#readme",
+  "dependencies": {
+    "steem": "^0.6.7"
+  }
+}
